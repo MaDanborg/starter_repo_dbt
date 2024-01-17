@@ -3,7 +3,7 @@
     FROM {{ref('staging_weather')}}
 ),
 add_averages AS (
-    SELECT week
+    SELECT *
         , MAX(avgtemp_c) AS weekly_max
         , MIN(avgtemp_c) AS weekly_min
         , AVG(avgtemp_c) AS weekly_avg
