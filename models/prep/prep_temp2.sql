@@ -10,6 +10,7 @@ add_averages AS (
         , AVG(avgtemp_c) AS weekly_avg
     FROM temperature_daily
     group by week, city
+    order by week
 )
 SELECT *
 FROM add_averages
