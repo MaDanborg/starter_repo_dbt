@@ -4,9 +4,12 @@ WITH temperature_daily AS (
 ),
 add_averages AS (
     SELECT city
+        , country
         , DATE_PART('week', date) AS week
-        , MAX(avgtemp_c) AS weekly_max
-        , MIN(avgtemp_c) AS weekly_min
+        , DATE_PART('month', date) AS month
+        , DATE_PART('quarter', date) AS quarter
+        , MAX(avgtemp_c) AS max_avg
+        , MIN(avgtemp_c) AS min_avg
         , AVG(avgtemp_c) AS weekly_avg
     FROM temperature_daily
     group by week, city
