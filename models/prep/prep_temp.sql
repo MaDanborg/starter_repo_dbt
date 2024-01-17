@@ -2,12 +2,16 @@
     SELECT * 
     FROM {{ref('staging_weather')}}
 ),
-SELECT week
-    , MAX(avgtemp_c) AS weekly_max
-    , MIN(avgtemp_c) AS weekly_min
-    , AVG(avgtemp_c) AS weekly_avg
-FROM temperature_daily
-GROUP BY week,
+add_averages AS (
+    SELECT week
+        , MAX(avgtemp_c) AS weekly_max
+        , MIN(avgtemp_c) AS weekly_min
+        , AVG(avgtemp_c) AS weekly_avg
+        group by week
+    FROM temperature_daily
+)
+SELECT *
+FROM add_averages,
 add_timestamps AS (
     SELECT *
         , DATE_PART('dow', date) AS weekday
