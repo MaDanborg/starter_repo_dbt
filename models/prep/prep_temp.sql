@@ -12,7 +12,7 @@ add_timestamps AS (
     FROM temperature_daily
 )
 SELECT *
-FROM add_timestamps;
+FROM add_timestamps
 
 SELECT week
     , MAX(avgtemp_c) AS weekly_max
