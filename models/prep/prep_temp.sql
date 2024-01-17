@@ -1,4 +1,4 @@
-    WITH temp_daily AS (
+    WITH temperature_daily AS (
     SELECT * 
     FROM {{ref('staging_weather')}}
 ),
