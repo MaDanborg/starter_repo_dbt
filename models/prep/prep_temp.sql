@@ -12,5 +12,14 @@ add_timestamps AS (
     FROM temperature_daily
 )
 SELECT *
-FROM add_timestamps
+FROM add_timestamps;
+
+SELECT week
+    , MAX(avgtemp_c) AS weekly_max
+    , MIN(avgtemp_c) AS weekly_min
+    , AVG(avgtemp_c) AS weekly_avg
+FROM temperature_daily
+GROUP BY week
+;
+
 
