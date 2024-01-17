@@ -14,9 +14,3 @@ add_timestamps AS (
 SELECT *
 FROM add_timestamps
 
-SELECT *
-FROM temperature_daily AS temp
-	SELECT 	week 
-			, AVG(avgtemp_c) AS weekly_averages
-			FROM temperature_daily
-			GROUP BY week, city
