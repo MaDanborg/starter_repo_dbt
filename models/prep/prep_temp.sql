@@ -1,4 +1,4 @@
-    WITH temperature_daily AS (
+WITH temperature_daily AS (
     SELECT * 
     FROM {{ref('staging_weather')}}
 ),
@@ -12,6 +12,10 @@ add_averages AS (
 )
 SELECT *
 FROM add_averages,
+WITH temperature_daily AS (
+    SELECT * 
+    FROM {{ref('staging_weather')}}
+),
 add_timestamps AS (
     SELECT *
         , DATE_PART('dow', date) AS weekday
