@@ -8,6 +8,7 @@ add_averages AS (
         , MIN(avgtemp_c) AS weekly_min
         , AVG(avgtemp_c) AS weekly_avg
     FROM temperature_daily
+    group by week
 )
 SELECT *
 FROM add_averages
