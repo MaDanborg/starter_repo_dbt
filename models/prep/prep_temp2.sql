@@ -3,7 +3,7 @@ WITH temperature_daily AS (
     FROM {{ref('staging_weather')}}
 ),
 add_averages AS (
-    SELECT week
+    SELECT DATE_PART('week', date) AS week
         , MAX(avgtemp_c) AS weekly_max
         , MIN(avgtemp_c) AS weekly_min
         , AVG(avgtemp_c) AS weekly_avg
