@@ -1,3 +1,5 @@
+create table mart_weeklyavg AS
+(
 WITH total_avg AS (
         SELECT city
         , country
@@ -12,3 +14,4 @@ WITH total_avg AS (
     order by week
 )
 SELECT * from total_avg
+)
