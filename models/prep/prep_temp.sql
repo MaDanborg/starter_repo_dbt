@@ -13,8 +13,3 @@ add_timestamps AS (
 )
 SELECT *
 FROM add_timestamps
-
-SELECT *
-into prep_temp
-FROM add_timestamps
-
