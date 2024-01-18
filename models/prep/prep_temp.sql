@@ -12,6 +12,9 @@ add_timestamps AS (
     FROM temperature_daily
 )
 SELECT *
+FROM add_timestamps
+
+SELECT *
 into prep_temp
 FROM add_timestamps
 

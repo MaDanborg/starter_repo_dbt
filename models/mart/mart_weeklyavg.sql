@@ -12,5 +12,8 @@ WITH total_avg AS (
     order by week
 )
 SELECT *
+from total_avg
+
+SELECT *
 into mart_weeklyavg
 from total_avg
