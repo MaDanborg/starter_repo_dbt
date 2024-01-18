@@ -1,5 +1,3 @@
-create table prep_temp AS
-(
 WITH temperature_daily AS (
     SELECT * 
     FROM {{ref('staging_weather')}}
@@ -14,6 +12,6 @@ add_timestamps AS (
     FROM temperature_daily
 )
 SELECT *
+into prep_temp
 FROM add_timestamps
-)
 
