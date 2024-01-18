@@ -38,4 +38,4 @@ models:
       materialized: table
     prep:
       materialized: table
-      +schema: public
+      
