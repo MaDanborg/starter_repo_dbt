@@ -1,3 +1,3 @@
 SELECT *
 into mart_weeklyavg
-from total_avg
+from mart_weeklyavg

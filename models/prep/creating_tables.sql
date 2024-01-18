@@ -1,3 +1,3 @@
 SELECT *
 into prep_temp
-FROM add_timestamps
+FROM prep_temp
